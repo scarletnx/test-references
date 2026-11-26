@@ -1,0 +1,22 @@
+# recompiler_backends frozen reference: LLVM alone's ends, a hash a function over its 16 states
+# generator 1
+# args --states 16 --ops PMULL_p64
+# items 16
+# inputs 24153c7406c6b3e3
+# recorded LLVM alone (snx_recompiler_set_backend 0)
+94801e13688b323a
+ff251b2402fe8b5a
+d04456f2d6ace512
+0c9ab32fdff44a3f
+123d26c8e4bccadd
+17ff56a312b25d19
+f15568ba7903130d
+5badf6133c2b4836
+26b43c2bf8fa2e1c
+f8a07672feb75969
+2b98876a13533743
+49b6c7b47a2ac5b4
+a31ecfeade6bac28
+ed2de46643cb06ba
+5c0a45e0e43fb321
+d44af775e54aad41

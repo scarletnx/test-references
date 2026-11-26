@@ -1,0 +1,7 @@
+# recompiler_backends frozen reference: LLVM alone's ends, a hash a function over its 40 states
+# generator 1
+# args --target android --states 40 --words 0e421420 4ec31462 6e441c83 2e453ca4 0e460cc5
+# items 1
+# inputs 5b83305a76a6f7cb
+# recorded LLVM alone (snx_recompiler_set_backend 0)
+dbc66014b117cc5a
