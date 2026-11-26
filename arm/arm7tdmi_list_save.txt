@@ -1,0 +1,8 @@
+# arm_x64's frozen reference: LLVM -O0's results of A32 and Thumb blocks, a hash a block over its states
+# generator 1
+# args --profile arm7tdmi --memory flat --word e3a0140e,e2811002,e891000c --word e3a0140e,e2811002,e881000c --states 256 --seed 0xa32
+# items 2 0
+# inputs 4d1dd36565eb16a6
+# recorded LLVM 23.1.6 -O0 on an x86-64 host
+89f36165818bb32f
+ff8931da76589a4a
