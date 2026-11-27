@@ -1,0 +1,7 @@
+# recompiler_backends frozen reference: LLVM alone's ends, a hash a function over its 8 states
+# generator 1
+# args --states 8 --words d2800069 91000421 91000442 91000463 91000484 910004a5 910004c6 910004e7 9ac24c00 1ac24800 f1000529 54fffec1 d65f03c0
+# items 1
+# inputs d0a7d7689966d44b
+# recorded LLVM alone (snx_recompiler_set_backend 0)
+a7c06a8cff788a9b
