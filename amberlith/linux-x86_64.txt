@@ -1,5 +1,5 @@
-# Amberlith cases, one a line: "suite: name" passes, "[RESULT] suite: name" ends as RESULT (docs/dev/edenprobe.md)
-# build: v1.0.4
+# Amberlith cases, one a line: "suite: name" passes, "[RESULT] suite: name" ends as RESULT (docs/dev/amberlith.md)
+# build: v1.2.0
 # mode: audio cpu display fs hooks kernel notime quick video
 audio: a 10 kHz voice at half the output rate keeps the level default quality's table gives
 audio: a 10 kHz voice at half the output rate keeps the level high quality's table gives
@@ -253,6 +253,8 @@ reference: half precision under AHP and DN gives hand-worked values and flags
 reference: incr stops at 0xff and incr_wrap goes to nought; decr stops at nought and decr_wrap goes to 0xff
 reference: inverting 0x0f through the write mask 0xf0 gives 0xff
 reference: lambda 1.25 blends level 1's 1019 and level 2's 2001 to 1264.5, a float exactly
+reference: libc: the tied sort hands over ids 0 to 15, four to a key, marks from 0xa0
+reference: libc: the tied sort judge takes the ties in any order and refuses a torn, lost or unsorted record
 reference: line loops close, line strips do not, and quads and polygons drawn as lines show their outlines alone
 reference: lists, strips, fans, quads, quad strips and polygons make the triangles and provoking vertices OpenGL's table gives
 reference: mandel: the grid's counts are the ones unbounded integers give
@@ -402,6 +404,7 @@ reference: tex8k's BC1 takes either way a five or six bit code becomes eight
 reference: tex8k's BC7 bound a region is the worst texel measured there
 reference: tex8k's BC7 mode 6 blocks are the bytes and texels Pillow decodes
 reference: tex8k's RGBA8 texels are their place and salt, filled a word at a time
+reference: tex8k's many textures each fill a cell, every texel apart from the others'
 reference: tex8k's percentile is numpy's and its distance the worst channel's
 reference: tex8k's raw copies into the BC7 texture cover the blocks its judge expects
 reference: tex8k's regions, levels, samples and copy-out sit where its judge says
