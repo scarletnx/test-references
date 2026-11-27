@@ -1,5 +1,5 @@
-# Amberlith cases, one a line: "suite: name" passes, "[RESULT] suite: name" ends as RESULT (docs/dev/edenprobe.md)
-# build: v1.0.0
+# Amberlith cases, one a line: "suite: name" passes, "[RESULT] suite: name" ends as RESULT (docs/dev/amberlith.md)
+# build: v1.2.0
 # mode: quick
 bionic: /proc/self shows the package, the library and app_process64
 bionic: a SIGUSR1 handler runs on raise, and a blocked signal waits as pending
@@ -11,6 +11,7 @@ bionic: snprintf words a negative NaN -nan and 1.0 in %a 0x1p+0, as bionic does
 bionic: the C library's locale is UTF-8 from the start
 framework: AtomicFile reads a leftover .bak as the last whole write
 framework: AtomicFile.finishWrite leaves the last write in the base file alone
+[fail: got 0.002 2.82879384806159E17 1.0E23 1.0E10 0.30000000000000004, expected 0.002 2.82879384806159008E17 9.999999999999999E22 1.0E10 0.30000000000000004] framework: Double.toString and Float.toString print the runtime's digits
 framework: LinkProperties.getDhcpServerAddress is the SDK's Inet4Address method, null on a new object
 framework: Log.isLoggable is false for DEBUG and true for INFO by default
 framework: MediaPlayer.setDataSource of a missing file throws FileNotFoundException
@@ -20,13 +21,17 @@ framework: SQLite sums groups and reports the column types
 framework: SharedPreferences.commit writes shared_prefs/NAME.xml in Android's XML
 framework: Uri.parse splits and decodes scheme, authority, path, query and fragment
 framework: a Handler runs the front of the queue, then posted, then delayed messages
+[fail: got showing true, attached false, size 0x0, after dismiss showing false, expected showing true, attached true, size 120x60, after dismiss showing false] framework: a PopupWindow shown at a location attaches its content at its size
 framework: org.json keeps insertion order and escapes the slash
 gles: EGL initializes at 1.4 or newer with ES2 and ES3 pbuffer configs
 gles: a 2 by 2 texture sampled nearest lands in its four quadrants
+[fail: got 00000000, expected 00ff00ff] gles: a GLES 1.1 clear reads back
 gles: a GLES 2 clear reads back in both corners
 gles: a GLES 3 context renders integer shader math into a texture framebuffer
 gles: a bad shader fails to compile with a log, a bad enum is GL_INVALID_ENUM once
+gles: a surface and a context destroyed while another thread has them draw until it lets go
 gles: a triangle covers the pixels inside it and no others
+[fail: got ffff00ff, expected ff00ffff] gles: glClear writes only the channels of the color mask
 gles: half-alpha white over black blends to half grey
 jni: Call*Method passes mixed arguments in variadic and array forms
 jni: FindClass finds an app class from a Java thread, not from an attached one
@@ -35,9 +40,11 @@ jni: GetVersion is JNI 1.6
 jni: JNI_OnLoad runs once, RegisterNatives and JNI names both bind
 jni: array elements copy back, a critical region writes, direct buffers both ways
 jni: exceptions cross JNI both ways with their class and message
+jni: what threads that ran native code held is given back when they end
 libc: gmtime_r and strftime write a fixed time in the C locale
 libc: libm is within 1 ulp of the correctly rounded results
 libc: qsort orders sixteen integers and bsearch finds each
+libc: qsort sorts three-byte records by a key four share, each record whole and kept once
 libc: setjmp returns twice, with longjmp's value, and 1 for 0
 libc: snprintf formats integers with widths, precisions and flags
 libc: snprintf rounds floats to their precision, and words infinities and NaNs as C says
@@ -70,6 +77,7 @@ reference: a block of every BC7 mode decodes as Pillow 12.3.0 decodes it
 reference: a centre exactly a margin away is still judged
 reference: a count's colour is the turned palette's, black where it never escaped
 reference: a counter clockwise triangle's face under each viewport of the fixed suite
+[fail: 56355 is 219 or 220, 65535 255 or 255, 0.5 255 or 255, 0x3555 255 or 255, -1 0 or 0, 65504 255 or 255] reference: a decoded value reaches a UNORM8 target as the nearest byte or the other one beside it
 reference: a demo's times leave the warm-up out and carry the frames asked for
 reference: a draw texture from texel -2 carries 0xffffe000 as its source x
 reference: a draw texture of 16 by 16 at (40, 24) is twelve words from 0x420
@@ -223,6 +231,8 @@ reference: half precision under AHP and DN gives hand-worked values and flags
 reference: incr stops at 0xff and incr_wrap goes to nought; decr stops at nought and decr_wrap goes to 0xff
 reference: inverting 0x0f through the write mask 0xf0 gives 0xff
 reference: lambda 1.25 blends level 1's 1019 and level 2's 2001 to 1264.5, a float exactly
+reference: libc: the tied sort hands over ids 0 to 15, four to a key, marks from 0xa0
+reference: libc: the tied sort judge takes the ties in any order and refuses a torn, lost or unsorted record
 reference: line loops close, line strips do not, and quads and polygons drawn as lines show their outlines alone
 reference: lists, strips, fans, quads, quad strips and polygons make the triangles and provoking vertices OpenGL's table gives
 reference: mandel: the grid's counts are the ones unbounded integers give
@@ -274,6 +284,7 @@ reference: repeating folds every index onto a texel
 reference: sampling a region one texel per pixel moves the texture to its corner
 reference: scene: no two of its colours and texels are alike, and a wrong pixel is named by the part it shows
 reference: scene: the four quarters, the hidden quad and the moved square are where the scene's description puts them
+reference: sched: a better thread started on the caller's core must run before the call returns
 reference: sched: a case that could not run says why, and the note adds the cases up
 reference: sched: a step keeps its first place and time, and one not taken comes last
 reference: sched: inheritance passes on the console's order and names what stalled
@@ -371,6 +382,7 @@ reference: tex8k's BC1 takes either way a five or six bit code becomes eight
 reference: tex8k's BC7 bound a region is the worst texel measured there
 reference: tex8k's BC7 mode 6 blocks are the bytes and texels Pillow decodes
 reference: tex8k's RGBA8 texels are their place and salt, filled a word at a time
+reference: tex8k's many textures each fill a cell, every texel apart from the others'
 reference: tex8k's percentile is numpy's and its distance the worst channel's
 reference: tex8k's raw copies into the BC7 texture cover the blocks its judge expects
 reference: tex8k's regions, levels, samples and copy-out sit where its judge says
@@ -398,6 +410,7 @@ reference: the FM synthesizer's log-sine and exponential tables read a sine with
 reference: the account nobody knows is one no line names
 reference: the alpha tests' names read as the fixed suite's cases do
 reference: the answer the console never gives is refused and named at every pixel
+[fail: 2 verdicts not as they should be; the first, a block read down its columns machine on the BC6H picture: 16360 exact, 0 off, 24 wrong] reference: the bcnimage judge: the console's decode exact, other GPUs' and RADV's bound, a block read down its columns or aside wrong
 reference: the bcnimage suite's large textures repeat its BC1 and BC7 pictures
 reference: the bcnimage suite's picture is the astcimage suite's
 reference: the bit count agrees with a table of nibbles
@@ -621,11 +634,13 @@ support: B cancels a run only once it was seen up on the running screen
 support: Y and X in one edge change nothing, and A in that edge still begins
 support: a ban comes after a crash in this run and before the crash list
 support: a ban's versions are every one, a list, or bounds on dotted numbers
+[fail: 6 of 6 rules right; with edenprobe's mode file and only a scratch folder in the root, not the old folder; with runs/ in the root, not the root] support: a card an edenprobe build left runs from its folder whole until an Amberlith build has run on it
 support: a case a runner stopped the program inside is skipped as timeout, with the limit and how long it ran
 support: a case banned on this machine is skipped as banned, its line said, until unban
 support: a case inherits neither another case's samples nor a pass's leftovers
 support: a case its frontend says could not be asked ends as a skip, whatever its verdict
 support: a case known to hang is skipped until hang asks, and retry does not run it
+support: a case known to hang runs on a machine a run showed it return on
 support: a case name becomes the file name it reads like
 support: a case named after another's expected picture does not land on it
 support: a case on the crash list is skipped as crashed until retry asks for it
@@ -840,6 +855,7 @@ support: the word hooks asks the services through the SDK's functions, a word of
 support: the word listen asks for the listening sequence and the audio family
 support: the word noprogress turns the running screen off and nothing else
 support: the word notime turns the timing passes off and says so
+support: the word nowindow keeps the mod's window closed and nothing else
 support: the word stress, and nothing else, asks for the stress cases
 support: the word vram=<MiB> says the machine's graphics memory, and a bad number says the one it keeps
 support: the words game and frames=<n> run the scene and set its frames, and a bad number says the one it keeps
@@ -853,5 +869,8 @@ support: two names that agree for longer than a stem still get one each
 support: untimed suites report no time
 support: what repeats is the direction pressed, whatever else is held
 support: what the start screen chooses is the run's mode, the label the file's
+support: with no pad to read, the results draw no key and no hint to press, and count down in words
+support: with no pad to read, the running screen offers no B and says the results come up by themselves
+support: with no pad to read, the start screen draws no tab and no key, and says its run begins by itself
 system: four threads add under one mutex, a key's destructor runs for each, each keeps its own thread-local
 system: the monotonic clock moves forward over a 20 ms sleep
