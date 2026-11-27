@@ -1,4 +1,4 @@
-# edenprobe
+# amberlith
 
 How each case of Amberlith (edenprobe before 1.0.0) ends on ScarletNX, a run's baseline: `# build:` and `# mode:`,
 then one case a line, `suite: name` for one that passes and `[RESULT] suite: name` for one that ends otherwise
