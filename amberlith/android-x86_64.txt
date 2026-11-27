@@ -11,7 +11,7 @@ bionic: snprintf words a negative NaN -nan and 1.0 in %a 0x1p+0, as bionic does
 bionic: the C library's locale is UTF-8 from the start
 framework: AtomicFile reads a leftover .bak as the last whole write
 framework: AtomicFile.finishWrite leaves the last write in the base file alone
-[fail: got 0.002 2.82879384806159E17 1.0E23 1.0E10 0.30000000000000004, expected 0.002 2.82879384806159008E17 9.999999999999999E22 1.0E10 0.30000000000000004] framework: Double.toString and Float.toString print the runtime's digits
+framework: Double.toString and Float.toString print the runtime's digits
 framework: LinkProperties.getDhcpServerAddress is the SDK's Inet4Address method, null on a new object
 framework: Log.isLoggable is false for DEBUG and true for INFO by default
 framework: MediaPlayer.setDataSource of a missing file throws FileNotFoundException
@@ -21,17 +21,17 @@ framework: SQLite sums groups and reports the column types
 framework: SharedPreferences.commit writes shared_prefs/NAME.xml in Android's XML
 framework: Uri.parse splits and decodes scheme, authority, path, query and fragment
 framework: a Handler runs the front of the queue, then posted, then delayed messages
-[fail: got showing true, attached false, size 0x0, after dismiss showing false, expected showing true, attached true, size 120x60, after dismiss showing false] framework: a PopupWindow shown at a location attaches its content at its size
+framework: a PopupWindow shown at a location attaches its content at its size
 framework: org.json keeps insertion order and escapes the slash
 gles: EGL initializes at 1.4 or newer with ES2 and ES3 pbuffer configs
 gles: a 2 by 2 texture sampled nearest lands in its four quadrants
-[fail: got 00000000, expected 00ff00ff] gles: a GLES 1.1 clear reads back
+gles: a GLES 1.1 clear reads back
 gles: a GLES 2 clear reads back in both corners
 gles: a GLES 3 context renders integer shader math into a texture framebuffer
 gles: a bad shader fails to compile with a log, a bad enum is GL_INVALID_ENUM once
 gles: a surface and a context destroyed while another thread has them draw until it lets go
 gles: a triangle covers the pixels inside it and no others
-[fail: got ffff00ff, expected ff00ffff] gles: glClear writes only the channels of the color mask
+gles: glClear writes only the channels of the color mask
 gles: half-alpha white over black blends to half grey
 jni: Call*Method passes mixed arguments in variadic and array forms
 jni: FindClass finds an app class from a Java thread, not from an attached one
@@ -77,7 +77,7 @@ reference: a block of every BC7 mode decodes as Pillow 12.3.0 decodes it
 reference: a centre exactly a margin away is still judged
 reference: a count's colour is the turned palette's, black where it never escaped
 reference: a counter clockwise triangle's face under each viewport of the fixed suite
-[fail: 56355 is 219 or 220, 65535 255 or 255, 0.5 255 or 255, 0x3555 255 or 255, -1 0 or 0, 65504 255 or 255] reference: a decoded value reaches a UNORM8 target as the nearest byte or the other one beside it
+reference: a decoded value reaches a UNORM8 target as the nearest byte or the other one beside it
 reference: a demo's times leave the warm-up out and carry the frames asked for
 reference: a draw texture from texel -2 carries 0xffffe000 as its source x
 reference: a draw texture of 16 by 16 at (40, 24) is twelve words from 0x420
@@ -410,7 +410,7 @@ reference: the FM synthesizer's log-sine and exponential tables read a sine with
 reference: the account nobody knows is one no line names
 reference: the alpha tests' names read as the fixed suite's cases do
 reference: the answer the console never gives is refused and named at every pixel
-[fail: 2 verdicts not as they should be; the first, a block read down its columns machine on the BC6H picture: 16360 exact, 0 off, 24 wrong] reference: the bcnimage judge: the console's decode exact, other GPUs' and RADV's bound, a block read down its columns or aside wrong
+reference: the bcnimage judge: the console's decode exact, other GPUs' and RADV's bound, a block read down its columns or aside wrong
 reference: the bcnimage suite's large textures repeat its BC1 and BC7 pictures
 reference: the bcnimage suite's picture is the astcimage suite's
 reference: the bit count agrees with a table of nibbles
